@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/t_schedule?serverTimezone=Asia/Seoul
+    username: root
+    password: yna51i1E@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+      hibernate:
+        ddl-auto: update  # (create, update, validate, none 가능)
+      show-sql: true
+  h2:
+    console:
+      enabled: true
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+openai:
+  api-key : "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"
