@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,6 +23,14 @@ public class UserService {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtUtil = jwtUtil; // ✅ 추가된 부분
+    }
+
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
+    }
+
+    public User addUser(User users){
+        return userRepository.save(users);
     }
 
     @Transactional

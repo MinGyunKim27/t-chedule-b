@@ -1,4 +1,4 @@
-package com.example.tchedule.model;
+package com.example.tchedule.model;  // 🚨 패키지 경로 확인!
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -6,11 +6,11 @@ import lombok.*;
 @Entity
 @Table(name = "places")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Place {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

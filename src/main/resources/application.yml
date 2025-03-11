@@ -7,9 +7,15 @@ spring:
 
     jpa:
       database-platform: org.hibernate.dialect.MySQL8Dialect
+
       hibernate:
-        ddl-auto: update  # (create, update, validate, none 가능)
-      show-sql: true
+        ddl-auto: create-drop  # (create, update, validate, none 가능)
+        default_schema: public  # ✅ Hibernate 6.x에서는 기본 스키마를 명시해야 함
+      show-sql : true
+      properties:
+        hibernate:
+          format_sql: true  # ✅ SQL 문을 보기 쉽게 출력
+          use_sql_comments: true  # ✅ SQL에 주석 추가      show-sql: true
   h2:
     console:
       enabled: true
@@ -18,6 +24,7 @@ springdoc:
     enabled: true
   swagger-ui:
     enabled: true
+
 
 openai:
   api-key : "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"
